@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>音乐播放器</title>
+</head>
+
+<body>
+
+    <script>
+        //音乐从哪来
+        //音乐名，作者，地址，歌词，背景图片
+        //功能键，播放，暂停，快进，进度条，时长，上一曲，下一曲，循环播放，音量range，播放时间要换算等等 
+
+        var xhr=new XMLHttpRequest()
+        xhr.open('GET','http://localhost:8080/music.json',true)
+        xhr.onload=function(){
+            window.musicList=JSON.parse(xhr.responseText)
+        }
+        xhr.send()
+
+    </script>
+
+
+</body>
+
+</html>

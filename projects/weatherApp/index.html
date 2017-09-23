@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="outer-ct"></div>
+    <div id="inner-ct">
+        <input type="text" placeholder="请输入城市" id="u-ipt-city">
+        <div class="local-info">
+            <div id="location">loading...</div>
+            <div id="time"></div>
+        </div>
+
+        <div class="weather">
+            <div id="today">
+                <div id="info">
+                    <div id="t-temp-data">
+                        <div id="t-temp"></div>
+                        <!-- option+shift+8打出度数-->
+                        <div id="t-date">Today</div>
+                    </div>
+                </div>
+                <div id="t-img-wind">
+                    <img alt="weather">
+                    <div id="t-wind"></div>
+                </div>
+            </div>
+
+            <ul id="future">
+                <li class="f-forecast">
+                    <div class="f-date"></div>
+                    <img alt="weather" class="f-img">
+                    <div class="f-temp"></div>
+                </li>
+                <li class="f-forecast">
+                    <div class="f-date"></div>
+                    <img alt="weather" class="f-img">
+                    <div class="f-temp"></div>
+                </li>
+                <li class="f-forecast">
+                    <div class="f-date"></div>
+                    <img alt="weather" class="f-img">
+                    <div class="f-temp"></div>
+                </li>
+                <li class="f-forecast">
+                    <div class="f-date"></div>
+                    <img alt="weather" class="f-img">
+                    <div class="f-temp"></div>
+                </li>
+                <li class="f-forecast">
+                    <div class="f-date"></div>
+                    <img alt="weather" class="f-img">
+                    <div class="f-temp"></div>
+                </li>
+                <li class="f-forecast">
+                    <div class="f-date"></div>
+                    <img alt="weather" class="f-img">
+                    <div class="f-temp"></div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>

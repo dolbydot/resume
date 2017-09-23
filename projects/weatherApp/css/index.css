@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+::-webkit-input-placeholder{
+    color: #cdcdcd;
+}
+
+html,
+body,
+#outer-ct {
+    height: 100%;
+}
+
+#outer-ct,
+#inner-ct {
+    background: url('../images/reflection.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#outer-ct {
+    float: left;
+    width: 100%;
+    padding: 100px 200px;
+    filter: blur(55px);
+}
+
+#inner-ct {
+    margin: 100px 200px; 
+    position: absolute;
+    height: calc(100% - 400px);/*减去的部分包含天气栏高度*/
+    width: calc(100% - 400px);
+    min-width: 800px;
+    min-height: 300px;
+    border-radius: 8px 8px 0 0;
+}
+
+#inner-ct #u-ipt-city {
+    position: absolute;
+    left: 150px;
+    top: 100px;
+    width: 200px;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+}
+
+#inner-ct .local-info {
+    position: absolute;
+    width: 100px; 
+    right: 100px;
+    top: 150px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+#inner-ct .local-info #time {
+    margin-top: 10px;
+    letter-spacing: 2px;  
+}
+
+#inner-ct .weather {
+    position: absolute;
+    bottom: -200px;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: rgba(255, 255, 255, .3);
+    border-radius: 0 0 8px 8px;
+    cursor: pointer;
+}
+
+.weather #today { 
+    position: absolute;
+    text-align: center;
+    width: 35%;
+    height: 200px; 
+    padding: 25px;
+    color: #cdcdcd;
+}
+
+.weather #today #info,
+.weather #today #t-img-wind {
+    display: inline-block;
+}  
+
+#info {
+    margin-right: 30px;
+}
+
+#t-img-wind img {
+    width: 80px;
+    height: 80px;
+}
+
+#info #t-date{
+    background: rgb(139,126,118);
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+#info #t-temp {
+    line-height: 80px;
+    font-size: 50px;
+}
+
+.weather #future {
+    position: absolute;
+    left: 35%;
+    right: 0;
+    bottom: 0;
+    width: 65%;
+    height: 200px;
+    text-align: center;
+    color: #cdcdcd;
+    display: table; 
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */ /*flex布局代码*/
+}
+
+.weather #future .f-forecast {
+    display: table-cell; 
+    vertical-align: middle; 
+    border-left: 1px solid #ababab; 
+    /* flex-shrink: 0;
+    flex-grow: 1; */ /*flex布局代码*/ 
+}
+
+.f-forecast .f-img {
+    width: 50px;
+    height: 50px;
+}
+
+.f-forecast .f-date {
+    margin: 0 25px 10px 25px; 
+    border-radius: 10px;
+    background: rgb(139,126,118);
+}
+
