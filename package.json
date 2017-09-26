@@ -1,0 +1,26 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "resume project of dolbydot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "upload": "node upload.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dolbydot/resume.git"
+  },
+  "keywords": [
+    "resume"
+  ],
+  "author": "dolby.dot@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dolbydot/resume/issues"
+  },
+  "homepage": "https://github.com/dolbydot/resume#readme",
+  "dependencies": {
+    "dotload": "^1.1.1"
+  }
+}
