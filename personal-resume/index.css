@@ -1,0 +1,140 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('//at.alicdn.com/t/font_0et3y2pwfi5rvn29.eot');
+    src: url('//at.alicdn.com/t/font_0et3y2pwfi5rvn29.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_0et3y2pwfi5rvn29.woff') format('woff'),
+    url('//at.alicdn.com/t/font_0et3y2pwfi5rvn29.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_0et3y2pwfi5rvn29.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.list-icon {
+    color: black;
+    position: relative;
+    left: -40px;
+}
+
+body {
+    background: #efefef;
+}
+
+.container {
+    background: white;
+    width: 800px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3), -2px -4px 8px rgba(0, 0, 0, 0.3);
+    margin: 20px auto;
+    padding: 20px;
+}
+
+header,
+main,
+footer,
+.skills ul {
+    display: flex;
+}
+
+.list,
+h4 {
+    line-height: 1.8;
+}
+
+.list h4 {
+    margin-left: -16px;
+}
+
+.details :last-child {
+    font-weight: bolder;
+    font-family: "Lantinghei SC", "Open Sans";
+}
+
+h3 {
+    border-bottom: 2px solid black;
+    width: 300px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+header {
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+}
+
+.logo img {
+    vertical-align: middle;
+    border-radius: 50%;
+    margin-left: -20px;
+}
+
+.details {
+    margin-left: -180px;
+}
+
+.details :first-child {
+    font-weight: lighter;
+}
+
+.contacts p {
+    border-bottom: 4px solid black;
+    margin-bottom: 10px;
+}
+
+main {
+    flex-flow: column wrap;
+}
+
+.list {
+    border-left: 1px solid black;
+    margin-left: 8px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+p span {
+    color: #ccc;
+}
+
+.skills {
+    margin-left: 100px;
+}
+
+.skills ul {
+    flex-wrap: wrap;
+}
+
+li {
+    list-style: none;
+    position: relative;
+    margin-left: 3em;
+}
+
+.contacts li {
+    margin-left: 0;
+}
+
+.activity div li {
+    top: -1.6em;
+}
+
+.skills div li {
+    width: 100px;
+    margin-right: 3em;
+    margin-left: 1.5em;
+    margin-bottom: 2em;
+    top: -1.3em;
+}
