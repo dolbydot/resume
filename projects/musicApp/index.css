@@ -1,0 +1,158 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+html,body{
+    height: 100%;
+    background: #cdcdcd;
+    font-family: sans-serif,fantasy; 
+}
+
+  /* 背景模糊  */
+/* .bg{
+    background: center top / cover no-repeat;
+    filter: blur(40px);
+    position: absolute; 
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}      */
+
+@font-face {
+  font-family: 'iconfont'; 
+  src: url('//at.alicdn.com/t/font_435711_ewm6a5lh7b0ggb9.eot');
+  src: url('//at.alicdn.com/t/font_435711_ewm6a5lh7b0ggb9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_435711_ewm6a5lh7b0ggb9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_435711_ewm6a5lh7b0ggb9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_435711_ewm6a5lh7b0ggb9.svg#iconfont') format('svg');
+}
+
+.wrapper{
+    position: absolute;
+    background: white;   
+    width: 400px;
+    height: 500px;
+    left: 50%; 
+    top: 50%;
+    transform: translate(-50%,-50%);  
+    border-radius: 12px; 
+    box-shadow: 5px 5px 4px 0 rgba(0, 0, 0, .2);   
+    overflow: hidden;  
+}
+
+.wrapper .album-art{
+    position: absolute;
+    height: 270px;     
+    width: 100%; 
+    text-align: center;  
+    background: center top / cover no-repeat; 
+} 
+
+/*  歌词  */
+.album-art .music-lyric{
+    display: none;
+    background: rgba(0,0,0,.5);
+    color: #cdcdcd;
+    height: 270px;
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+.album-art .music-lyric .title{
+    margin: 20px auto;
+} 
+
+.wrapper .content{
+    position: absolute;
+    bottom: 0;  
+    width: 100%; 
+    height: calc(100% - 270px);  
+    padding: 25px 20px;
+    color: #5d6d7d; 
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    font-size: .8em;    
+    line-height: 1.8; 
+}
+
+.content>div{
+    flex-grow: 1;
+}
+
+.content .progress-bar{ 
+    margin: 20px 0;
+}
+
+.content .progress-bar,
+.content .ctrl-btn,
+.content .ctrl-btn>ul{
+    display: flex;
+    justify-content: space-between;
+} 
+
+.progress-bar>.progress-range,
+.voice-ctrl>.voice-range{
+    flex-grow: 1;    
+    background: #cdcdcd;
+    height: 5px;
+    margin: 9px 6px; 
+    cursor: pointer;
+}
+
+.content .ctrl-btn>ul{
+    color: black;   
+    line-height: 35px;  
+}
+
+.content .ctrl-btn .icon{
+    font-family: 'iconfont'; 
+    cursor: pointer;
+}
+
+.ctrl-btn .play-status{
+    font-size: 35px;  
+}
+
+.ctrl-btn .play-status .play-toggle{ 
+    color: #25c54d;
+}
+
+.ctrl-btn .voice-ctrl{
+    flex-grow: 1;
+    margin: 0 40px;
+}
+
+.voice-ctrl>.voice-range{
+    position: relative; 
+    top: 14px; 
+    margin: 0 5px;  
+} 
+
+.content .drag{
+    display: block;
+    background: black;
+    height: 5px; 
+}
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+

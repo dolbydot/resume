@@ -6,23 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>音乐播放器</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
+    <!--  背景  -->
+    <div class="bg"></div>
+    <div class="wrapper">
+        <div class="album-art">
+            <!-- 歌词  -->
+            <div class="music-lyric">
+                <h4 class="title">
+                    <span class="singer">歌手</span>
+                    <span> - </span>
+                    <span class="song-name">歌名</span>
+                </h4>
+                <p class="lyric">我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界
+                    我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界
+                    我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界
+                    我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界 我的世界</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="song-info">
+                <h2 class="song-name">歌名</h2>
+                <p class="author">歌手</p>
+                <p class="special">专辑名</p>
+            </div>
+
+            <div class="progress-bar">
+                <span class="cur-time">00:00</span>
+                <div class="progress-range">
+                    <span class="drag"></span>
+                </div>
+                <span class="total-time">10:10</span>
+            </div>
+
+            <div class="ctrl-btn">
+                <ul class="play-status">
+                    <li class="icon pre-song">&#xe616;</li>
+                    <li class="icon play-toggle">&#xe8fe;</li>
+                    <li class="icon next-song">&#xe600;</li>
+                </ul>
+                <ul class="voice-ctrl">
+                    <li class="icon voldown">&#xe634;</li>
+                    <li class="voice-range"><span class="drag"></span></li>
+                </ul>
+                <ul class="icon song-cycle">
+                    <li class="icon cycle-status">&#xe630;</li>
+                </ul>
+            </div>
+
+        </div>
+        <audio id="player"></audio>
+    </div>
+
 
     <script>
         //音乐从哪来
         //音乐名，作者，地址，歌词，背景图片
         //功能键，播放，暂停，快进，进度条，时长，上一曲，下一曲，循环播放，音量range，播放时间要换算等等 
 
-        var xhr=new XMLHttpRequest()
-        xhr.open('GET','http://localhost:8080/music.json',true)
-        xhr.onload=function(){
-            window.musicList=JSON.parse(xhr.responseText)
-        }
-        xhr.send()
-
+        // var xhr = new XMLHttpRequest()
+        // xhr.open('GET', 'https://api.imjad.cn/cloudmusic/?type=song&id=4875780', true)
+        // xhr.onload = function () {
+        //     console.log(xhr.responseText)
+        // }
+        // xhr.send()
     </script>
+    <script src="index.js"></script>
 
 
 </body>
