@@ -8,8 +8,9 @@ var songList = [
         "author": "张国荣",
         "special": "Printemps",
         "img": "./special-photo/取暖.jpg",
-        "time": 254
-    },
+        "time": 254,
+        "lyric":""
+     },
     {
         "index": 2,
         "uid": "2",
@@ -18,7 +19,8 @@ var songList = [
         "author": "林子祥",
         "special": "十分十二寸",
         "img": "./special-photo/十分十二寸.jpg",
-        "time": 585
+        "time": 585,
+        "lyric":""
     },
     {
         "index": 3,
@@ -28,7 +30,8 @@ var songList = [
         "author": "张国荣",
         "special": "钟情张国荣",
         "img": "./special-photo/月亮代表我的心2.jpg",
-        "time": 237
+        "time": 237,
+        "lyric":""
     },
     {
         "index": 4,
@@ -38,7 +41,8 @@ var songList = [
         "author": "孙耀威",
         "special": "爱的故事(上集)",
         "img": "./special-photo/爱的故事上.jpg",
-        "time": 238
+        "time": 238,
+        "lyric":""
     },
     {
         "index": 5,
@@ -48,7 +52,8 @@ var songList = [
         "author": "莫文蔚",
         "special": "莫后年代",
         "img": "./special-photo/爱情.jpg",
-        "time": 285
+        "time": 285,
+        "lyric":""
     },
     {
         "index": 6,
@@ -58,7 +63,8 @@ var songList = [
         "author": "叶倩文",
         "special": "《倩女幽魂》主题曲",
         "img": "./special-photo/黎明不要来2.jpg",
-        "time": 188
+        "time": 188,
+        "lyric":""
     },
     {
         "index": 7,
@@ -68,7 +74,8 @@ var songList = [
         "author": "陈奕迅",
         "special": "Time Files",
         "img": "./special-photo/一丝不挂3.jpg",
-        "time": 241
+        "time": 241,
+        "lyric":""
     },
     {
         "index": 8,
@@ -78,7 +85,8 @@ var songList = [
         "author": "张学友",
         "special": "Lust,Caution",
         "img": "./special-photo/淹没3.png",
-        "time": 222
+        "time": 222,
+        "lyric":""
     },
     {
         "index": 9,
@@ -88,7 +96,8 @@ var songList = [
         "author": "Beyond",
         "special": "乐与怒",
         "img": "./special-photo/我是愤怒.jpg",
-        "time": 252
+        "time": 252,
+        "lyric":""
     },
     {
         "index": 10,
@@ -98,7 +107,8 @@ var songList = [
         "author": "张国荣&梅艳芳",
         "special": "Y100",
         "img": "./special-photo/芳华绝代.jpeg",
-        "time": 369
+        "time": 369,
+        "lyric":""
     },
     {
         "index": 11,
@@ -108,7 +118,8 @@ var songList = [
         "author": "卢冠廷",
         "special": "《大话西游》插曲",
         "img": "./special-photo/一生所爱.jpg",
-        "time": 273
+        "time": 273,
+        "lyric":""
     },
     {
         "index": 12,
@@ -118,7 +129,8 @@ var songList = [
         "author": "谢安琪",
         "special": "Audiophile Compilations",
         "img": "./special-photo/钟无艳.jpg",
-        "time": 276
+        "time": 276,
+        "lyric":""
     },
     {
         "index": 13,
@@ -128,7 +140,8 @@ var songList = [
         "author": "王若琳",
         "special": "为爱做的一切",
         "img": "./special-photo/一生守候.jpeg",
-        "time": 293
+        "time": 293,
+        "lyric":""
     },
     {
         "index": 14,
@@ -138,7 +151,8 @@ var songList = [
         "author": "林志美",
         "special": "《食神》插曲",
         "img": "./special-photo/初恋.jpg",
-        "time": 225
+        "time": 225,
+        "lyric":""
     },
     {
         "index": 15,
@@ -148,7 +162,8 @@ var songList = [
         "author": "周柏豪&郑融",
         "special": "Continue",
         "img": "./special-photo/一事无成.jpeg",
-        "time": 191
+        "time": 191,
+        "lyric":""
     }
 ]
 
@@ -363,27 +378,52 @@ window.addEventListener('keydown', function (e) {
 })
 
 
-
-
 //循环按钮样式
-// var cycleBtnIdx = 0
-// cycleBtn.addEventListener('click', function () {
-//     cycleBtnIdx += 1
-//     if (cycleBtnIdx % 3 == 0) {
-//         //默认列表循环
-//         this.innerHTML = '&#xe630;'
-//     } else if (cycleBtnIdx % 3 == 1) {
-//         //单曲循环
-//         this.innerHTML = '&#xe65f;'
-//         if (player.currentTime == player.duration) {
+var cycleBtnIdx = 0
+var RsongList = songList
+cycleBtn.addEventListener('click', function () {
+    cycleBtnIdx += 1
+    if (cycleBtnIdx % 3 == 0) {
+        //默认列表循环
+        this.innerHTML = '&#xe630;'
+    } else if (cycleBtnIdx % 3 == 1) {
+        //单曲循环
+        this.innerHTML = '&#xe65f;'
+        if (player.currentTime == player.duration) {
 
-//         }
-//     } else {
-//         //随机循环
-//         this.innerHTML = '&#xe631;'
-//     }
-// })
+        }
+    } else {
+        //随机循环
+        this.innerHTML = '&#xe631;'
+        // var randomList = songList.concat()
+
+        // console.log(randomList)
+        // curIdx += 1
+        // listLen = randomList.length
+        // randomList.shuffle()
+        // console.log(randomList.shuffle())
+
+        songList.shuffle()
+        console.log(songList)
+    }
+})
+
+Array.prototype.shuffle = function () {
+    var arr = this
+    for (var i = arr.length - 1; i >= 0; i--) {
+        var randomIdx = Math.floor(Math.random() * (i + 1))
+        var itemAtIdx = arr[randomIdx]
+        arr[randomIdx] = arr[i]
+        arr[i] = itemAtIdx
+    }
+    return arr
+}
 //歌词
+
+
+
+
+
 
 
 
