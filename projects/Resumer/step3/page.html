@@ -16,8 +16,8 @@
             <!-- v-model意在将input.value与data.newTodo双向绑定，在input中输入内容并回车，新建一个待办项li  -->
         </div>
         <ol class="todos">
-            <li v-for="todo in todoList">
-               <input type="checkbox" v-model="todo.done" v-cloak> {{todo.title}}
+            <li v-for="todo in todoList" v-cloak>
+               <input type="checkbox" v-model="todo.done"> {{todo.title}}
 
                <span v-if="todo.done">已完成</span>
                <span v-else>未完成</span>
