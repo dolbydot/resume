@@ -300,7 +300,7 @@ var app = new _vue2.default({
         todoList: []
     },
     // 每次刷新页面待办就没了，因为代码保存在内存中，而内存无法持久，所以我们选择将代码保存在localStorage中
-    creater: function creater() {
+    created: function created() {
         var _this = this;
 
         window.onbeforeunload = function () {

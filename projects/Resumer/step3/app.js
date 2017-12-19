@@ -8,7 +8,7 @@ var app = new Vue({
         todoList: []
     },
     // 每次刷新页面待办就没了，因为代码保存在内存中，而内存无法持久，所以我们选择将代码保存在localStorage中
-    creater: function () {
+    created: function () {
         window.onbeforeunload = () => {
             let dataString = JSON.stringify(this.todoList)
             window.localStorage.setItem('myTodos', dataString)
