@@ -2,6 +2,11 @@
 
 <head>
     <meta charset="utf-8">
+    <style lang="">
+        [v-cloak]{
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -12,7 +17,7 @@
         </div>
         <ol class="todos">
             <li v-for="todo in todoList">
-               <input type="checkbox" v-model="todo.done"> {{todo.title}}
+               <input type="checkbox" v-model="todo.done" v-cloak> {{todo.title}}
 
                <span v-if="todo.done">已完成</span>
                <span v-else>未完成</span>
