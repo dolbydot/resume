@@ -52,6 +52,7 @@ h1 {
 
 .todos span:nth-child(2){
     color: blue;
+    padding-left: 10px;
 }
 
 .todos span:nth-child(3) {
