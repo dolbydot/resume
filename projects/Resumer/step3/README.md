@@ -1,6 +1,6 @@
-### `git clone` 之后，运行`npm i` 安装所有依赖包
-### 不需要全局安装webpack，只需在命令行输入`./node_modules/.bin/webpack`或者`npm run dev`即可运行webpack
-### 有以下功能：
+1. `git clone` 之后，运行`npm i` 安装所有依赖包
+2.  不需要全局安装webpack，只需在命令行输入`./node_modules/.bin/webpack`或者`npm run dev`即可运行webpack
+3.  有以下功能：
 - 用户可以新建一个待办事项
 - 用户可以删除一个待办事项
 - 用户可以将一个待办事项标记为已完成
