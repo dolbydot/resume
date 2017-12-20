@@ -11,9 +11,14 @@
     "vue": "^2.5.11",
     "webpack": "^3.10.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "css-loader": "^0.28.7",
+    "style-loader": "^0.19.1",
+    "webpack-dev-server": "^2.9.7"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --hot --open "
   },
   "author": "",
   "license": "ISC"

@@ -4,12 +4,16 @@ module.exports = {
         filename: 'bundle.js'
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js[x]?$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader?presets[]=env&presets[]=react'
             },
+            {
+                test:/\.css$/,
+                loader:['style-loader','css-loader']
+            }
         ]
     },
     resolve: {
