@@ -11430,7 +11430,7 @@ exports = module.exports = __webpack_require__(8)(undefined);
 
 
 // module
-exports.push([module.i, "* {\n    padding: 0;\n    margin: 0;\n    box-sizing: border-box;\n}\n\nul,\nol,\nli {\n    list-style: none;\n}\n/*  v-cloak放在li中，隐藏未编译的Mustache标签直到实例准备结束，有了这个指令之后，哪怕在github page上展示，网速较慢情况下也不会先给用户看到 {{ xxx }} 标记。  */\n\n[v-cloak] {\n    display: none;\n}\n\nbody {\n    font-family: fantasy;\n    background: rgba(247, 172, 36, .76);\n}\n\n#app {\n    padding: 40px;\n}\n\nh1 {\n    color: white;\n    font-style: italic;\n    font-size: 3em;\n}\n\n.newTask>input {\n    -webkit-appearance: none;\n    -moz-appearance: none;\n    outline: none;\n    padding: 5px 10px;\n    margin: 10px 0;\n    width: 50%;\n    border: 1px solid #aaa;\n    border-radius: 5px;\n    font-size: 1.3em;\n}\n\n.todos {\n    line-height: 3;\n}\n\n.todos input {\n    outline: none;\n}\n\n.todos span:nth-child(2){\n    color: blue;\n}\n\n.todos span:nth-child(3) {\n    color: red;\n    padding: 0 10px;\n}\n\n.todos input:checked~span:nth-child(3) {\n    color: green;\n}\n\nbutton {\n    padding: 1px 5px;\n    cursor: pointer;\n}\n\n    ::-webkit-input-placeholder {\n    /* WebKit browsers */\n    color: #aaa;\n}\n\n    :-moz-placeholder {\n    /* Mozilla Firefox 4 to 18 */\n    color: #aaa;\n}\n\n    ::-moz-placeholder {\n    /* Mozilla Firefox 19+ */\n    color: #aaa;\n}\n\n    :-ms-input-placeholder {\n    /* Internet Explorer 10+ */\n    color: #aaa;\n}", ""]);
+exports.push([module.i, "* {\n    padding: 0;\n    margin: 0;\n    box-sizing: border-box;\n}\n\nul,\nol,\nli {\n    list-style: none;\n}\n/*  v-cloak放在li中，隐藏未编译的Mustache标签直到实例准备结束，有了这个指令之后，哪怕在github page上展示，网速较慢情况下也不会先给用户看到 {{ xxx }} 标记。  */\n\n[v-cloak] {\n    display: none;\n}\n\nbody {\n    font-family: fantasy;\n    background: rgba(247, 172, 36, .76);\n}\n\n#app {\n    padding: 40px;\n}\n\nh1 {\n    color: white;\n    font-size: 3em;\n}\n\n.newTask>input {\n    -webkit-appearance: none;\n    -moz-appearance: none;\n    outline: none;\n    padding: 5px 10px;\n    margin: 10px 0;\n    width: 50%;\n    border: 1px solid #aaa;\n    border-radius: 5px;\n    font-size: 1.3em;\n}\n\n.todos {\n    line-height: 3;\n}\n\n.todos input {\n    outline: none;\n}\n\n.todos span:nth-child(2){\n    color: blue;\n    padding-left: 10px;\n}\n\n.todos span:nth-child(3) {\n    color: red;\n    padding: 0 10px;\n}\n\n.todos input:checked~span:nth-child(3) {\n    color: green;\n}\n\nbutton {\n    padding: 1px 5px;\n    cursor: pointer;\n}\n\n    ::-webkit-input-placeholder {\n    /* WebKit browsers */\n    color: #aaa;\n}\n\n    :-moz-placeholder {\n    /* Mozilla Firefox 4 to 18 */\n    color: #aaa;\n}\n\n    ::-moz-placeholder {\n    /* Mozilla Firefox 19+ */\n    color: #aaa;\n}\n\n    :-ms-input-placeholder {\n    /* Internet Explorer 10+ */\n    color: #aaa;\n}", ""]);
 
 // exports
 
@@ -11995,7 +11995,6 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 function friendlyDate(time) {
-
     var offset = +new Date() - time;
     var seconds = 1000,
         minutes = seconds * 60,
