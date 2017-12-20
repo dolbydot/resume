@@ -13,10 +13,10 @@
         </div>
         <ol class="todos">
             <li v-for="todo in todoList" v-cloak>
-                <input type="checkbox" :checked="todo.done" @change="toggleTodo(todo)"> {{todo.title}}
+                <input type="checkbox" :checked="todo.done" @change="toggleTodo(todo)"  v-cloak> {{todo.title}}
                 
-                <span>/{{formatedTime(todo.createdAt)}}创建</span>
-                <span v-if="todo.done">/{{formatedTime(todo.doneAt)}}已完成</span>
+                <span v-cloak>/{{formatedTime(todo.createdAt)}}创建</span>
+                <span v-if="todo.done" v-cloak>/{{formatedTime(todo.doneAt)}}已完成</span>
                 <span v-else>未完成</span>
                 <!-- 根据用户是否点击按钮来决定是否完成该待办项  -->
 
