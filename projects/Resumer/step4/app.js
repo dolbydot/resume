@@ -11,7 +11,6 @@ AV.init({
     appKey: APP_KEY
 });
 
-
 //测试代码
 // var TestObject = AV.Object.extend('TestObject');
 // var testObject = new TestObject();
@@ -20,7 +19,6 @@ AV.init({
 // }).then(function(object) {
 //   alert('LeanCloud Rocks!');
 // })
-
 
 var app = new Vue({
     el: '#app',
@@ -33,6 +31,7 @@ var app = new Vue({
             username: '',
             password: ''
         },
+        currentUser: null,//当前登录的用户
     },
     // 每次刷新页面待办就没了，因为代码保存在内存中，而内存无法持久，所以我们选择将代码保存在localStorage中
     created: function () {
@@ -89,17 +88,29 @@ var app = new Vue({
             let user = new AV.User();
             user.setUsername(this.formData.username);
             user.setPassword(this.formData.password);
-            user.signUp().then(function (loginedUser) {
-                console.log(loginedUser)
-            }, function (error) { })
+            user.signUp().then((loginedUser) => {
+                // console.log(loginedUser)
+                this.currentUser = this.getCurrentUser()
+            }, (error) => {
+                alert('注册失败')
+            })
         },
 
         //登录
         login() {
             AV.User.logIn(this.formData.username, this.formData.password)
-                .then(function (loginedUser) {
-                    console.log(loginedUser)
-                }, function (error) { })
+                .then((loginedUser) => {
+                    // console.log(loginedUser)
+                    this.currentUser = this.getCurrentUser()
+                }, (error) => {
+                    alert('登录失败')
+                })
+        },
+
+        //获取当前登录的用户
+        getCurrentUser() {
+            let { id, createdAt, attributes: { username } } = AV.User.current()
+            return { id, username, createdAt }
         }
     },
 })
