@@ -34,6 +34,7 @@ var app = new Vue({
         let oldData = JSON.parse(oldDataString)
         this.todoList = oldData || []
     },
+    
     methods: {
         // 增加一个待办项
         addTodo() {
