@@ -110,7 +110,7 @@ var app = new Vue({
         //获取当前登录的用户
         getCurrentUser() {
             let { id, createdAt, attributes: { username } } = AV.User.current()
-            return { id, username, createdAt }
+            return { id, username, createdAt }//解构赋值
         }
     },
 })
