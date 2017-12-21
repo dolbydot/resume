@@ -1,0 +1,89 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+/*  v-cloak放在li中，隐藏未编译的Mustache标签直到实例准备结束，有了这个指令之后，哪怕在github page上展示，网速较慢情况下也不会先给用户看到 {{ xxx }} 标记。  */
+
+[v-cloak] {
+    display: none;
+}
+
+body {
+    font-family: fantasy;
+    background: rgba(247, 172, 36, .76);
+}
+
+#app {
+    padding: 40px;
+}
+
+h1 {
+    color: white;
+    font-size: 3em;
+}
+
+.newTask>input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    padding: 5px 10px;
+    margin: 10px 0;
+    width: 50%;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 1.3em;
+}
+
+.todos {
+    line-height: 3;
+}
+
+.todos input {
+    outline: none;
+}
+
+.todos span:nth-child(2){
+    color: blue;
+    padding-left: 10px;
+}
+
+.todos span:nth-child(3) {
+    color: red;
+    padding: 0 10px;
+}
+
+.todos input:checked~span:nth-child(3) {
+    color: green;
+}
+
+button {
+    padding: 1px 5px;
+    cursor: pointer;
+}
+
+    ::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #aaa;
+}
+
+    :-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #aaa;
+}
+
+    ::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #aaa;
+}
+
+    :-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #aaa;
+}
