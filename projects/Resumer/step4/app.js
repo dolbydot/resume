@@ -18,7 +18,7 @@ var app = new Vue({
         newTodo: '',
         todoList: [],
         actionType: 'signUp',
-        formData: {//登录注册共用，这样一来用户切换登录注册的时候，已输入的数据就不需要再输入一遍
+        formData: {//登入 注册共用，这样一来用户切换登入注册的时候，已输入的数据就不需要再输入一遍
             username: '',
             password: ''
         },
@@ -33,8 +33,9 @@ var app = new Vue({
         let oldDataString = window.localStorage.getItem('myTodos')
         let oldData = JSON.parse(oldDataString)
         this.todoList = oldData || []
+        this.currentUser = this.getCurrentUser()
     },
-    
+
     methods: {
         // 增加一个待办项
         addTodo() {
@@ -88,7 +89,7 @@ var app = new Vue({
             })
         },
 
-        //登录
+        //登入
         login() {
             AV.User.logIn(this.formData.username, this.formData.password)
                 .then((loginedUser) => {
@@ -101,8 +102,21 @@ var app = new Vue({
 
         //获取当前登录的用户
         getCurrentUser() {
-            let { id, createdAt, attributes: { username } } = AV.User.current()
-            return { id, username, createdAt }//解构赋值
-        }
+            let current = AV.User.current()
+            if (current) {
+                let { id, createdAt, attributes: { username } } = current
+                return { id, username, createdAt }//解构赋值
+            } else {
+                return null
+            }
+        },
+
+        //登出
+        logout() {
+            AV.User.logOut()
+            this.currentUser = null
+            window.location.reload()
+        },
+
     },
 })

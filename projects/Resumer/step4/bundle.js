@@ -310,14 +310,6 @@ _leancloudStorage2.default.init({
     appKey: APP_KEY
 });
 
-var TestObject = _leancloudStorage2.default.Object.extend('TestObject');
-var testObject = new TestObject();
-testObject.save({
-    words: 'Hello World!'
-}).then(function (object) {
-    alert('LeanCloud Rocks!');
-});
-
 var app = new _vue2.default({
     el: '#app',
     data: {
@@ -325,10 +317,11 @@ var app = new _vue2.default({
         newTodo: '',
         todoList: [],
         actionType: 'signUp',
-        formData: {
+        formData: { //登入 注册共用，这样一来用户切换登入注册的时候，已输入的数据就不需要再输入一遍
             username: '',
             password: ''
-        }
+        },
+        currentUser: null //当前登录的用户
     },
     // 每次刷新页面待办就没了，因为代码保存在内存中，而内存无法持久，所以我们选择将代码保存在localStorage中
     created: function created() {
@@ -341,13 +334,15 @@ var app = new _vue2.default({
         var oldDataString = window.localStorage.getItem('myTodos');
         var oldData = JSON.parse(oldDataString);
         this.todoList = oldData || [];
+        this.currentUser = this.getCurrentUser();
     },
+
     methods: {
         // 增加一个待办项
         addTodo: function addTodo() {
             // 避免无内容的todo
             if (this.newTodo === '') return;
-            this.todoList.push({
+            this.todoList.unshift({
                 title: this.newTodo,
                 createdAt: Date.now(),
                 doneAt: 0,
@@ -385,14 +380,56 @@ var app = new _vue2.default({
         },
 
 
-        //关于注册
+        //注册
         signUp: function signUp() {
+            var _this2 = this;
+
             var user = new _leancloudStorage2.default.User();
             user.setUsername(this.formData.username);
             user.setPassword(this.formData.password);
             user.signUp().then(function (loginedUser) {
-                console.log(loginedUser);
-            }, function (error) {});
+                // console.log(loginedUser)
+                _this2.currentUser = _this2.getCurrentUser();
+            }, function (error) {
+                alert('注册失败');
+            });
+        },
+
+
+        //登入
+        login: function login() {
+            var _this3 = this;
+
+            _leancloudStorage2.default.User.logIn(this.formData.username, this.formData.password).then(function (loginedUser) {
+                // console.log(loginedUser)
+                _this3.currentUser = _this3.getCurrentUser();
+            }, function (error) {
+                alert('登录失败');
+            });
+        },
+
+
+        //获取当前登录的用户
+        getCurrentUser: function getCurrentUser() {
+            var current = _leancloudStorage2.default.User.current();
+            if (current) {
+                var id = current.id,
+                    createdAt = current.createdAt,
+                    username = current.attributes.username;
+
+                return { id: id, username: username, createdAt: createdAt //解构赋值
+                };
+            } else {
+                return null;
+            }
+        },
+
+
+        //登出
+        logout: function logout() {
+            _leancloudStorage2.default.User.logOut();
+            this.currentUser = null;
+            window.location.reload();
         }
     }
 });
