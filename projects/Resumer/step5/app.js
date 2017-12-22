@@ -152,7 +152,7 @@ var app = new Vue({
                 todo.doneAt = Date.now()
                 this.todoList.push(this.todoList.splice(index, 1)[0])
             }
-
+            this.saveOrUpdateTodos()//一定要记得保存完成状态
         },
 
         //切换日期显示格式
