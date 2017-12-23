@@ -356,9 +356,10 @@ var app = new _vue2.default({
         // let oldData = JSON.parse(oldDataString)
         // this.todoList = oldData || []
 
-        // this.currentUser = this.getCurrentUser()
+        this.currentUser = this.getCurrentUser();
+        this.fetchTodos();
         // this.$nextTick(()=>{
-        //     this.fetchTodos()
+        //     
         // })
     },
 
