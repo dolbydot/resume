@@ -181,8 +181,8 @@ var app = new Vue({
             AV.User.logIn(this.formData.username, this.formData.password)
                 .then((loginedUser) => {
                     // console.log(loginedUser)
-                    // this.currentUser = this.getCurrentUser()
-                    // this.fetchTodos()//登录成功后即读取todos
+                    this.currentUser = this.getCurrentUser()
+                    this.fetchTodos()//登录成功后即读取todos
                 }, (error) => {
                     console.log('登录失败')
                 })
