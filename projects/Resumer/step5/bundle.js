@@ -492,12 +492,10 @@ var app = new _vue2.default({
 
         //登入
         login: function login() {
-            var _this4 = this;
-
             _leancloudStorage2.default.User.logIn(this.formData.username, this.formData.password).then(function (loginedUser) {
                 // console.log(loginedUser)
-                _this4.currentUser = _this4.getCurrentUser();
-                _this4.fetchTodos(); //登录成功后即读取todos
+                // this.currentUser = this.getCurrentUser()
+                // this.fetchTodos()//登录成功后即读取todos
             }, function (error) {
                 console.log('登录失败');
             });
