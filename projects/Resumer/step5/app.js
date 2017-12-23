@@ -58,7 +58,9 @@ var app = new Vue({
         // this.todoList = oldData || []
 
         this.currentUser = this.getCurrentUser()
-        this.fetchTodos()
+        this.$nextTick(()=>{
+            this.fetchTodos()
+        })
     },
 
     methods: {
