@@ -325,8 +325,6 @@ var app = new _vue2.default({
     },
 
     created: function created() {
-        var _this = this;
-
         // window.onbeforeunload = () => {//onbeforeunload在页面卸载时触发，实践得出的结论是：beforeunload 事件里面的所有请求都发不出去，会被取消
         //     let dataString = JSON.stringify(this.todoList)
 
@@ -358,16 +356,16 @@ var app = new _vue2.default({
         // let oldData = JSON.parse(oldDataString)
         // this.todoList = oldData || []
 
-        this.currentUser = this.getCurrentUser();
-        this.$nextTick(function () {
-            _this.fetchTodos();
-        });
+        // this.currentUser = this.getCurrentUser()
+        // this.$nextTick(()=>{
+        //     this.fetchTodos()
+        // })
     },
 
     methods: {
         // 读取todos
         fetchTodos: function fetchTodos() {
-            var _this2 = this;
+            var _this = this;
 
             if (this.currentUser) {
                 var query = new _leancloudStorage2.default.Query('AllTodos');
@@ -377,8 +375,8 @@ var app = new _vue2.default({
                 .then(function (todos) {
                     var avAllTodos = todos[0]; //一个用户对应一块AllTodos，理论上AllTodos只有一个，所以我们取结果的第一项
                     var id = avAllTodos.id;
-                    _this2.todoList = JSON.parse(avAllTodos.attributes.content);
-                    _this2.todoList.id = id; // 读取成功后保存id
+                    _this.todoList = JSON.parse(avAllTodos.attributes.content);
+                    _this.todoList.id = id; // 读取成功后保存id
                 }, function (error) {
                     console.log(error);
                 });
@@ -399,7 +397,7 @@ var app = new _vue2.default({
 
         // 存储待办项
         saveTodos: function saveTodos() {
-            var _this3 = this;
+            var _this2 = this;
 
             var dataString = JSON.stringify(this.todoList);
             var AVTodos = _leancloudStorage2.default.Object.extend('AllTodos');
@@ -411,7 +409,7 @@ var app = new _vue2.default({
             avTodos.setACL(acl); // 设置访问控制
             avTodos.save().then(function (todo) {
                 // 成功保存之后，执行其他逻辑.
-                _this3.todoList.id = todo.id; // save成功后保存id
+                _this2.todoList.id = todo.id; // save成功后保存id
                 console.log('保存成功');
             }, function (error) {
                 // 异常处理
@@ -477,14 +475,14 @@ var app = new _vue2.default({
 
         //注册
         signUp: function signUp() {
-            var _this4 = this;
+            var _this3 = this;
 
             var user = new _leancloudStorage2.default.User();
             user.setUsername(this.formData.username);
             user.setPassword(this.formData.password);
             user.signUp().then(function (loginedUser) {
                 // console.log(loginedUser)
-                _this4.currentUser = _this4.getCurrentUser();
+                _this3.currentUser = _this3.getCurrentUser();
             }, function (error) {
                 console.log('注册失败');
             });
@@ -493,12 +491,12 @@ var app = new _vue2.default({
 
         //登入
         login: function login() {
-            var _this5 = this;
+            var _this4 = this;
 
             _leancloudStorage2.default.User.logIn(this.formData.username, this.formData.password).then(function (loginedUser) {
                 // console.log(loginedUser)
-                _this5.currentUser = _this5.getCurrentUser();
-                _this5.fetchTodos(); //登录成功后即读取todos
+                _this4.currentUser = _this4.getCurrentUser();
+                _this4.fetchTodos(); //登录成功后即读取todos
             }, function (error) {
                 console.log('登录失败');
             });

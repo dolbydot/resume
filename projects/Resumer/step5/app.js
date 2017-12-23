@@ -57,10 +57,10 @@ var app = new Vue({
         // let oldData = JSON.parse(oldDataString)
         // this.todoList = oldData || []
 
-        this.currentUser = this.getCurrentUser()
-        this.$nextTick(()=>{
-            this.fetchTodos()
-        })
+        // this.currentUser = this.getCurrentUser()
+        // this.$nextTick(()=>{
+        //     this.fetchTodos()
+        // })
     },
 
     methods: {
